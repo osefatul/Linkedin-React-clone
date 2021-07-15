@@ -13,20 +13,20 @@ function Sidebar() {
         <Avatar className="sidebar_avatar" />
         <h2>Sefatullah Omar</h2>
         <h4>sefaullahomar2@gmail.com</h4>
-
-        <div className="sidebar_stats">
-          <div className="sidebar__stat">
-            <p>Who Viewed you</p>
-            <p className="sidebar_statNumber">2455</p>
-          </div>
-          <div className="sidebar__stat">
-            <p>Views on postsadf </p>
-            <p className="sidebar_statNumber">2448</p>
-          </div>
-        </div>
-
-        <div className="sidebar_bottom"></div>
       </div>
+
+      <div className="sidebar_stats">
+        <div className="sidebar__stat">
+          <p>Who Viewed you</p>
+          <p className="sidebar_statNumber">2455</p>
+        </div>
+        <div className="sidebar__stat">
+          <p>Views on post </p>
+          <p className="sidebar_statNumber">2448</p>
+        </div>
+      </div>
+
+      <div className="sidebar_bottom"></div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 .sidebar{
   position: sticky;
   flex:0.2;
-  top: 80px;
+  top: 280px;
   border-radius: 10px;
   text-align: center;
   height: fit-content;
@@ -32,9 +32,19 @@
   object-fit: cover;
 }
 
+
+.sidebar__stats{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px;
+}
+
 .sidebar__stat{
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
 
 }
+
+
