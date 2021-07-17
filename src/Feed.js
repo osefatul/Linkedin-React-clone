@@ -9,21 +9,22 @@ import Post from "./Post";
 import { db } from "./Firebase";
 import InputOption from "./InputOption";
 import firebase from "firebase";
-import SelectInput from "@material-ui/core/Select/SelectInput";
 
 function Feed() {
   const [input, setInput] = useState("");
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) => {
+    db.collection("posts").onSnapshot((snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
         }))
-      );
-    });
+      )
+    );
+
+    console.log(posts);
   }, []);
 
   const sendPost = (e) => {
@@ -68,13 +69,15 @@ function Feed() {
 
       {/*Post */}
       {posts.map(({ id, data: { name, description, message, photoUrl } }) => {
-        <Post
-          key={id}
-          name={name}
-          description={description}
-          message={message}
-          photoUrl={photoUrl}
-        />;
+        return (
+          <Post
+            key={id}
+            name={name}
+            description={description}
+            message={message}
+            photoUrl={photoUrl}
+          />
+        );
       })}
     </div>
   );
