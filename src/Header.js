@@ -7,12 +7,13 @@ import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import ChatIcon from "@material-ui/icons/Chat";
 import NotificationsIcons from "@material-ui/icons/Notifications";
 import profilePic from "./me.jpg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import HeaderOption from "./HeaderOption";
-import { logout } from "./features/counter/userSlice";
+import { logout, selectUser } from "./features/counter/userSlice";
 import { auth } from "./Firebase";
 
 function Header() {
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const logoutOfApp = () => {
@@ -37,7 +38,7 @@ function Header() {
         <HeaderOption Icon={BusinessCenterIcon} title="jobs" />
         <HeaderOption Icon={ChatIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcons} title="Notifications" />
-        <HeaderOption avatar={profilePic} title="me" onClick={logoutOfApp} />
+        <HeaderOption avatar={true} title="me" onClick={logoutOfApp} />
       </div>
     </div>
   );
