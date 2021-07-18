@@ -16,7 +16,6 @@ function Login() {
     if (!name) {
       return alert("Please Enter full name");
     }
-
     //lets create a user. once we crete the user then go into the user and update their profile
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -40,7 +39,22 @@ function Login() {
       .catch((error) => alert(error));
   };
 
-  const LoginToApp = () => {};
+  const LoginToApp = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            photoURL: userAuth.user.photoURL,
+          })
+        );
+      })
+      .catch((error) => alert(error));
+  };
 
   return (
     <div className="login">
