@@ -29,10 +29,10 @@ function App() {
         );
       } else {
         //user is logged out
-        dispatch(logout);
+        dispatch(logout());
       }
     });
-  });
+  }, []);
   return (
     <div className="app">
       <Header />

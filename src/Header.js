@@ -13,7 +13,6 @@ import { logout, selectUser } from "./features/counter/userSlice";
 import { auth } from "./Firebase";
 
 function Header() {
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const logoutOfApp = () => {
